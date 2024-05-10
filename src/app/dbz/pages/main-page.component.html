@@ -4,11 +4,16 @@
 <div class="row">
   <div class="col">
     <!-- Delete Character -->
-    <dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></dbz-list>
+    <dbz-list
+    [characterList]="characters"
+    (onDelete)="onDeleteCharacter($event)"
+    ></dbz-list>
   </div>
 
   <div class="col">
     <!-- $event, sirve para recibir la información que se esta enviando desde el hijo -->
-    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+    <dbz-add-character
+    (onNewCharacter)="onNewCharacter($event)"
+    ></dbz-add-character>
   </div>
 </div>
