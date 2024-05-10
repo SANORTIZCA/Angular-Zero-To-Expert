@@ -11,7 +11,7 @@
     let isOdd = odd;
     "
 
-    class="list-group-item"
+    class="list-group-item d-flex justify-content-between align-items-center"
 
     [ngClass]="{
       'list-group-item-dark': isLast,
@@ -19,15 +19,18 @@
     }">
     <!-- el ngClass sirve para añadir clases de forma condicional
     [class]="list-group-item", tambien se puede hacer así, cuando colocamos [class] estamos diciendo que va a hacer una expresión de JS-->
-    <span class="text-primary"> {{i+1}}.  </span>
+    <div>
+      <span class="text-primary"> {{i+1}}.  </span>
 
-    <span>{{character.name}} - </span>
+      <span>{{character.name}} - </span>
 
-    <strong>Power: </strong>
+      <strong>Power: </strong>
 
-     <span>{{character.power}}</span>
+      <span>{{character.power}}</span>
 
-    <!-- <span> Es par: {{isEven}}</span>
-    <span> Es impar: {{isOdd}}</span> -->
+      <!-- <span> Es par: {{isEven}}</span>
+      <span> Es impar: {{isOdd}}</span> -->
+    </div>
+      <button (click)="onDeleteCharacter(i)" class="btn btn-danger">X</button>
   </li>
 </ul>

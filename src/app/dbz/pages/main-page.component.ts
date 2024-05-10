@@ -18,4 +18,12 @@ export class MainPageComponent {
       power: 7500,
     }
   ];
+
+  public onNewCharacter(character:Character):void{
+    this.characters.push(character);
+  }
+
+  public onDeleteCharacter(index:number):void{
+    this.characters.splice(index,1);
+  }
 }

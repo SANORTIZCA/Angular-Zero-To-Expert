@@ -1,8 +1,39 @@
 <h4>Agregar personaje</h4>
-<form class="row">
-  <input type="text" class="form-control mb-2" placeholder="Nombre">
-  <input type="number" class="form-control " placeholder="Poder">
-  <button type="submit" class="btn btn-primary">
+
+<!-- form agrupador de los campos del formulario -->
+<!-- submit = cuando el formulario es propagado para enviarlo a un backend -->
+<!-- ngSubmit = evento de Angular para enviar el formulario -->
+<form
+  (ngSubmit)="emitCharacter()"
+  class="row"
+>
+  <!-- [] = atributo, () = evento, [()] =two way databinding, ngModel = binding-->
+  <input
+    type="text"
+    [(ngModel)]="character.name"
+    name="name"
+    class="form-control mb-2"
+    placeholder="Nombre"
+  >
+
+  <input
+    type="number"
+    [(ngModel)]="character.power"
+    name="power"
+    class="form-control "
+    placeholder="Poder"
+  >
+
+  <button
+    type="submit"
+    class="btn btn-primary">
+
     Agregar
+
   </button>
+  <!-- | = pipe/tuberia -->
+  <!-- json = pipe que convierte un objeto a un string -->
+  <!-- basicamente me imprime el objeto -->
+  <!-- <pre>{{character | json}}</pre> -->
+
 </form>
